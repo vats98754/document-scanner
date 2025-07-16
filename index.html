@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Document Scanner</h1>
+            <p>Capture and scan documents with your webcam</p>
+        </header>
+
+        <main>
+            <div class="camera-section">
+                <div class="camera-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="overlay-canvas"></canvas>
+                    <canvas id="capture-canvas" style="display: none;"></canvas>
+                </div>
+                
+                <div class="controls">
+                    <button id="start-camera" class="btn btn-primary">
+                        📷 Start Camera
+                    </button>
+                    <button id="capture" class="btn btn-success" disabled>
+                        📸 Capture Document
+                    </button>
+                    <button id="toggle-detection" class="btn btn-secondary" disabled>
+                        🔍 Toggle Detection
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>Captured Documents</h2>
+                <div id="results-container">
+                    <p class="no-documents">No documents captured yet. Start by enabling your camera and capturing a document!</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Click "Start Camera" to enable your webcam</li>
+                <li>Position a document in front of the camera</li>
+                <li>The app will automatically detect document edges (green outline)</li>
+                <li>Click "Capture Document" when the detection looks good</li>
+                <li>Your scanned document will appear below</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://docs.opencv.org/4.8.0/opencv.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
