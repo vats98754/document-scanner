@@ -1,0 +1,25 @@
+{
+  "name": "document-scanner",
+  "version": "1.0.0",
+  "description": "A simple document scanner web app using webcam and computer vision",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "document",
+    "scanner",
+    "webcam",
+    "computer-vision",
+    "opencv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
