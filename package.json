@@ -2,10 +2,12 @@
   "name": "document-scanner",
   "version": "1.0.0",
   "description": "A simple document scanner web app using webcam and computer vision",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc && node dist/server.js",
+    "watch": "tsc --watch"
   },
   "keywords": [
     "document",
