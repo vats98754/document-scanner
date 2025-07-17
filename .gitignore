@@ -68,5 +68,5 @@ jspm_packages/
 
 # Generated images (keep originals)
 img_*.png
-scanned_*.png
 warped_*.png
+document_*.jpg
