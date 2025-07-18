@@ -1,3 +1,17 @@
+# Document Scanner - Hyperparameter Tuning Results
+
+# Ignore all hyperparameter tuning result directories except summary files
+hyperparameter_results/
+!hyperparameter_results/hyperparameter_summary.json
+!hyperparameter_results/parameter_effects.png
+!hyperparameter_results/top_results_visualization.png
+
+# Ignore all quick test result directories except summary files
+quick_test_results/
+!quick_test_results/hyperparameter_summary.json
+!quick_test_results/parameter_effects.png
+!quick_test_results/quick_test_visualization.png
+
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -31,6 +45,40 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated images (except key results)
+*.png
+*.jpg
+*.jpeg
+!parameter_effects.png
+!top_results_visualization.png
+!quick_test_visualization.png
 
 # Logs
 logs
