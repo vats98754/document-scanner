@@ -25,6 +25,7 @@ build/
 *.d.ts
 
 # Environment variables
+venv/
 .env
 .env.local
 .env.development.local
