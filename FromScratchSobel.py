@@ -8,13 +8,8 @@ class FromScratchSobel():
         if (alpha != 0):
             self.sobel_operator = mygetSobelKernelAlpha(ksize, alpha)
         else:
-            Gx, Gy, self.G_magnitude, self.G_theta = mygetSobelKernel(ksize)
-            if dx:
-                self.sobel_operator = Gx
-            elif dy:
-                self.sobel_operator = Gy
-            else:
-                self.sobel_operator = mygetSobelKernelAlpha(ksize, alpha)
+            self.Gx, self.Gy, self.G_magnitude, self.G_theta = mygetSobelKernel(ksize)
+            self.sobel_operator = mygetSobelKernelAlpha(ksize, alpha=np.atan2(dy, dx))
 
 # Sobel operator, defined for just alpha=0 (x-direction) and alpha=math.pi/2 (y-direction)
 def mygetSobelKernel(ksize=(3,3)):
