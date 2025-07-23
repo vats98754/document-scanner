@@ -32,6 +32,83 @@
                         🔍 Toggle Detection
                     </button>
                 </div>
+                
+                <div class="cv-parameters" id="cv-parameters" style="display: none;">
+                    <h3>🔧 Computer Vision Parameters</h3>
+                    
+                    <div class="parameter-group">
+                        <h4>📍 Harris Corner Detection</h4>
+                        <div class="parameter-row">
+                            <label for="harris-threshold">Threshold:</label>
+                            <input type="range" id="harris-threshold" min="0.001" max="0.05" step="0.001" value="0.005">
+                            <span id="harris-threshold-value">0.005</span>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="harris-k">Harris K:</label>
+                            <input type="range" id="harris-k" min="0.01" max="0.1" step="0.01" value="0.04">
+                            <span id="harris-k-value">0.04</span>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="nms-radius">NMS Radius:</label>
+                            <input type="range" id="nms-radius" min="5" max="30" step="1" value="15">
+                            <span id="nms-radius-value">15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="parameter-group">
+                        <h4>🌀 Gaussian Blur</h4>
+                        <div class="parameter-row">
+                            <label for="blur-kernel-size">Kernel Size:</label>
+                            <input type="range" id="blur-kernel-size" min="3" max="15" step="2" value="5">
+                            <span id="blur-kernel-size-value">5</span>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="blur-sigma">Sigma (σ):</label>
+                            <input type="range" id="blur-sigma" min="0.5" max="3.0" step="0.1" value="1.0">
+                            <span id="blur-sigma-value">1.0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="parameter-group">
+                        <h4>🟢 Edge Detection</h4>
+                        <div class="parameter-row">
+                            <label for="edge-threshold">Edge Threshold:</label>
+                            <input type="range" id="edge-threshold" min="20" max="200" step="5" value="80">
+                            <span id="edge-threshold-value">80</span>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="edge-sample-rate">Sample Rate:</label>
+                            <input type="range" id="edge-sample-rate" min="1" max="10" step="1" value="3">
+                            <span id="edge-sample-rate-value">3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="parameter-group">
+                        <h4>🎨 Display Options</h4>
+                        <div class="parameter-row">
+                            <label for="show-edges">Show Edges:</label>
+                            <input type="checkbox" id="show-edges" checked>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="show-corners">Show Corners:</label>
+                            <input type="checkbox" id="show-corners" checked>
+                        </div>
+                        <div class="parameter-row">
+                            <label for="corner-size">Corner Size:</label>
+                            <input type="range" id="corner-size" min="5" max="20" step="1" value="12">
+                            <span id="corner-size-value">12</span>
+                        </div>
+                    </div>
+                    
+                    <div class="parameter-actions">
+                        <button id="reset-params" class="btn btn-secondary btn-small">
+                            🔄 Reset to Defaults
+                        </button>
+                        <button id="save-params" class="btn btn-primary btn-small">
+                            💾 Save Settings
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div class="results-section">
@@ -47,14 +124,22 @@
             <ol>
                 <li>Click "Start Camera" to enable your webcam</li>
                 <li>Position a document in front of the camera</li>
-                <li>The app will automatically detect document edges (green outline)</li>
+                <li>The app will automatically detect corners using custom Harris corner detection (colored circles)</li>
+                <li>Edge detection highlights document boundaries (green dots)</li>
                 <li>Click "Capture Document" when the detection looks good</li>
                 <li>Your scanned document will appear below</li>
             </ol>
+            <p><strong>Custom Computer Vision Features:</strong></p>
+            <ul>
+                <li>🔴 From-scratch 2D convolution implementation</li>
+                <li>🟢 Custom Sobel edge detection algorithms</li>
+                <li>🔵 Harris corner detection with colored overlays</li>
+                <li>🟡 Gaussian blur using custom kernels</li>
+                <li>⚪ Real-time image processing without external libraries</li>
+            </ul>
         </div>
     </div>
 
-    <script src="https://docs.opencv.org/4.8.0/opencv.js"></script>
     <script src="dist/script.js"></script>
 </body>
 </html>
